@@ -53,17 +53,32 @@ def num_check(question, low):
             print(error)
 
 # Get factors, return a sorted list
-def get_factors(get_factors):
+def get_factors(to_factor):
     
-    print()
+    # x**(0.5) is the square root of x
+    # We want to loop untill we get to the square root of to_factor
+    stop = int(to_factor**(0.5))
     
- 
+    factor_list = []
 
-
-
-
-
-     
+    for item in range(1, stop + 1):
+        
+        # if modulo is zero, then the number is a factor
+        if to_factor % item == 0:
+            
+            # find second factor by dividing "to factor" by the fist factor
+            factor_2 = int(to_factor / item)
+            
+            # Add first factors to list
+            factor_list.append(item)
+            
+            # check second factor is in list and add it
+            if factor_2 not in factor_list:
+                factor_list.append(factor_2)
+                
+    # output
+    factor_list.sort()
+    return(factor_list)
 
 # Main Routine goes here
 
@@ -99,8 +114,6 @@ while Keep_going == "":
         comment = "{} is a perfect square".format(var_to_factor) 
 
     # output factors and comment 
-
-    # Generate heading...
     if var_to_factor == 1:
         heading = "One is special.."
 
@@ -114,7 +127,7 @@ while Keep_going == "":
     print(comment)
 
     print()
-    keep_going = input("Press <enter> to see the instructions or any key to continue")
+    keep_going = input("Press <enter> to see the instructions or any key to quit")
     print()
 
 print()
