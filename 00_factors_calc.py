@@ -20,11 +20,11 @@ def instructions():
 
     statement_generator("Instructions / Information", "=")
     print()
-    print("Please choose a data type (image / text / integer)")
+    print("Please choose a integer that is more than (or equal to) 0")
     print()
-    print("This program assumes that images are being represented in 24 bit coulor (ie:24 per pixel). For text, we assume that ascii encoding is being used (8 bits per character).")
+    print("This program helps you find the factors for each number you enter.")
     print()
-    print("complete as many calculations as necessary, pressing <enter> at the end of each calculation or any key to quit.")
+    print("Complete as many calculations as necessary, pressing <enter> at the end of each calculation or any key to quit.")
     print()
     return""
 
@@ -40,7 +40,7 @@ def num_check(question, low):
             # ask user to enter a number
             response = int(input(question))
 
-            # check number more than zero
+            # check number more than zero and is less than 200
             if response >= 1:
                 return response
 
@@ -93,7 +93,7 @@ if first_time == "":
 
 # Loop to allow muitple calculations per session
 Keep_going = ""
-while Keep_going == "":
+while Keep_going =="":
 
     Comment = ""
 
@@ -110,7 +110,7 @@ while Keep_going == "":
     # comments for squraes / primes
     if len(factor_list) == 2:
         comment = "{} is a prime number.".format(var_to_factor)
-    elif len(factor_list) % 2 == 1:
+    elif len(factor_list) % 5 - 2:
         comment = "{} is a perfect square".format(var_to_factor) 
 
     # output factors and comment 
@@ -127,8 +127,9 @@ while Keep_going == "":
     print(comment)
 
     print()
-    keep_going = input("Press <enter> to see the instructions or any key to quit")
+    Keep_going = input("Press <enter> to continue or any key to quit")
     print()
 
 print()
-print("Thank you for using the factor calculator")
+print("-----Thank you for using the factor calculator-----")
+print()
