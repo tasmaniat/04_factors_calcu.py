@@ -95,7 +95,7 @@ if first_time == "":
 Keep_going = ""
 while Keep_going =="":
 
-    Comment = ""
+    comment = ""
 
     # ask user for number to be factored...
     print()
