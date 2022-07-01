@@ -105,12 +105,12 @@ while Keep_going =="":
         factor_list = get_factors(var_to_factor)
     else:
         factor_list = ""
-        comment = "one is UNITY!   IT=t only has one factor. Itself :) "
+        comment = "one is UNITY!   IT only has one factor. Itself :) "
 
     # comments for squraes / primes
     if len(factor_list) == 2:
         comment = "{} is a prime number.".format(var_to_factor)
-    elif len(factor_list) % 5 - 2:
+    elif len(factor_list) % 2 == 1:
         comment = "{} is a perfect square".format(var_to_factor) 
 
     # output factors and comment 
